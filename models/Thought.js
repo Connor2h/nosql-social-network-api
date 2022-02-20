@@ -7,6 +7,23 @@ const ReactionSchema = new Schema(
             type: Schema.Types.ObjectId,
             default: () => new Types.ObjectId()
         },
+
+        reactionBody: {
+            type: String,
+            required: true,
+            validate: [({ length }) => length >= 1 && length <= 280, 'Your text should be longer than one character, but not longer than 280 characters.']
+        },
+
+        username: {
+            type: String,
+            required: true
+        },
+
+        createdAt: {
+            type: Date,
+            default: Date.now,
+            get: createdAtVal => dateFormat(createdAtVal)
+        }
     }
 )
 
