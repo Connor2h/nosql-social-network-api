@@ -3,29 +3,29 @@ const { User } = require('../models');
 const userController = {
     // get all users
     getAllUsers(req, res) {
-        Pizza.find({})
+        User.find({})
             .populate({
-                path: 'comments',
+                path: 'thoughts',
                 select: '-__v'
             })
             .select('-__v')
             .sort({ _id: -1 })
-            .then(dbPizzaData => res.json(dbPizzaData))
+            .then(dbUserData => res.json(dbUserData))
             .catch(err => {
                 console.log(err);
                 res.sendStatus(400);
             });
     },
 
-    // get one pizza by id
-    getPizzaById({ params }, res) {
-        Pizza.findOne({ _id: params.id })
+    // get one user by id
+    getUserById({ params }, res) {
+        User.findOne({ _id: params.id })
             .populate({
-                path: 'comments',
+                path: 'thoughts',
                 select: '-__v'
             })
             .select('-__v')
-            .then(dbPizzaData => res.json(dbPizzaData))
+            .then(dbUserData => res.json(dbUserData))
             .catch(err => {
                 console.log(err);
                 res.sendStatus(400);
@@ -33,9 +33,9 @@ const userController = {
     },
 
     // createPizza
-    createPizza({ body }, res) {
-        Pizza.create(body)
-            .then(dbPizzaData => res.json(dbPizzaData))
+    createUser({ body }, res) {
+        User.create(body)
+            .then(dbUserData => res.json(dbUserData))
             .catch(err => res.json(err));
     },
 
