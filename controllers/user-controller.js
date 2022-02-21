@@ -32,22 +32,22 @@ const userController = {
             });
     },
 
-    // createPizza
+    // create user
     createUser({ body }, res) {
         User.create(body)
             .then(dbUserData => res.json(dbUserData))
             .catch(err => res.json(err));
     },
 
-    // update pizza by id
-    updatePizza({ params, body }, res) {
-        Pizza.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
-            .then(dbPizzaData => {
-                if (!dbPizzaData) {
-                    res.status(404).json({ message: 'No pizza found with this id!' });
+    // update user by id
+    updateUser({ params, body }, res) {
+        User.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
+            .then(dbUserData => {
+                if (!dbUserData) {
+                    res.status(404).json({ message: 'No User found with this id!' });
                     return;
                 }
-                res.json(dbPizzaData);
+                res.json(dbUserData);
             })
             .catch(err => res.json(err));
     },
