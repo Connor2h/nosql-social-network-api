@@ -13,7 +13,7 @@ const thoughtController = {
             });
     },
 
-    // get one user by id
+    // get one thought by id
     getThoughtById({ params }, res) {
         Thought.findOne({ _id: params.id })
             .select('-__v')
