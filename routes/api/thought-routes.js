@@ -3,7 +3,8 @@ const {
     getAllThoughts,
     getThoughtById,
     createThought,
-    updateThought
+    updateThought,
+    deleteThought
 
 } = require('../../controllers/thought-controller');
 
@@ -19,7 +20,7 @@ router
     .get(getThoughtById)
     .post(createThought)
     .put(updateThought)
-//     .delete(deleteUser);
+    .delete(deleteThought);
 
 // api/users/:userId/friends/:friendId
 // router
