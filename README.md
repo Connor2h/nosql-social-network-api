@@ -21,8 +21,7 @@ Video Link: https://drive.google.com/file/d/1tlUqVRrcRemr_la07li_CUqKiyzxea7y/vi
 
 4. Test your api end points.(here are what some of your routes could look like)
 
-5.
-
+5. ![image info](./public/images/routes.JPG)
 
 ## Contribution
 Made with ❤️ by [Connor Hollis]
