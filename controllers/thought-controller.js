@@ -60,6 +60,13 @@ const thoughtController = {
             });
     },
 
+    // example data
+    // {
+    //     "thoughtText": "Here's a cool thought...",
+    //     "username": "lernantino",
+    //     "userId": "5edff358a0fcb779aa7b118b"
+    // }
+
     // update thought by id
     updateThought({ params, body }, res) {
         Thought.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })

@@ -42,6 +42,12 @@ const userController = {
             .catch(err => res.json(err));
     },
 
+    // example data
+    // {
+    //     "username": "lernantino",
+    //     "email": "lernantino@gmail.com"
+    // }
+
     // update user by id
     updateUser({ params, body }, res) {
         User.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
